@@ -1,0 +1,23 @@
+table {
+  max-width: 100%;
+  border: 1px solid grey;
+
+  tr {
+
+    th {
+      border: 1px solid grey;
+    }
+
+    td {
+      border: 1px solid grey;
+    }
+  }
+}
+
+///////////////////Media
+@media(max-width: 576px){
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

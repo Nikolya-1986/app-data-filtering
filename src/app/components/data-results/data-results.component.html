@@ -1,0 +1,22 @@
+<div
+  *ngIf="dataSearch.length > 0; else emptyBlockSearch"
+  class="row"
+  >
+
+  <ng-content></ng-content>
+  <ul>
+    <li *ngFor="let wordsSubString of arrayFoundSubString">
+      {{ wordsSubString }}
+    </li>
+  </ul>
+
+</div>
+
+<ng-template #emptyBlockSearch>
+  <h2
+    class="text-center"
+    style="color: red;"
+    >
+    No words found!!!
+  </h2>
+</ng-template>

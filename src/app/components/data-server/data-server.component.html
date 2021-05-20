@@ -1,0 +1,47 @@
+<section
+  *ngIf="resultWords"
+  class="row d-flex flex-wrap data__server"
+  >
+
+  <div class="col-lg-3 col-sm-4 col-12">
+
+    <table>
+      <tr class="text-center">
+        <th colspan="2">
+          {{ titleBlock }}
+        </th>
+      </tr>
+      <tr>
+        <th>
+          №
+        </th>
+        <th>
+          Words
+        </th>
+      </tr>
+      <tr *ngFor="let resultWord of resultWords.data; let ind = index">
+        <td>
+          {{ ind + 1 }}
+        </td>
+        <td>
+          {{ resultWord }}
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <app-data-filter class="col-lg-9 col-sm-8 col-12"
+    [resultWords]="resultWords"
+    (getLengthWord)="getLengthWord($event)"
+    >
+
+    <ul>
+      <li *ngFor="let wordsLongerLength of arrayOfLongerLength">
+        {{ wordsLongerLength }}
+      </li>
+    </ul>
+
+  </app-data-filter>
+
+</section>

@@ -1,0 +1,16 @@
+.container-fluid {
+
+  header {
+    margin-bottom: 1rem;
+    background-color: turquoise;
+
+    h1 {
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+}
