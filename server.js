@@ -15,3 +15,6 @@ app.get('*', (req, res) => {
 app.listen(port, () => {
     console.log("SERVER WORKS!!!")
 })
+//git remote show - show reference heroku
+//heroku origin - reference
+//heroku open
