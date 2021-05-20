@@ -1,10 +1,10 @@
-const path  = require('path');//require аналог импорта, path библиотека которая указывает путь (адрес пути)
-const express = require('express');//express помогает создавать web сервера
-const app = express();//app нобор констант который помогает работать с севером
+const path  = require('path');
+const express = require('express');
+const app = express();
 
-const srcPath = path.join(__dirname, '..', 'build')//__dirname хранит информацию где мы находимся (корневой компонент)
+const srcPath = path.join(__dirname, '..', 'build')
 
-const port = process.env.PORT || 3000;//порт или 3000 или который даст heroku
+const port = process.env.PORT || 3000;
 
 app.use(express.static(srcPath));
 
@@ -12,6 +12,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(srcPath, 'index.html'))
 });
 
-app.listen(port, () => {//включить порт
+app.listen(port, () => {
     console.log("SERVER WORKS!!!")
 })

@@ -61,11 +61,5 @@ export class DataFilterComponent implements OnInit {
         return this.resultWords;
       }
     })
-    return function clouse(this: any) {
-      this.arrayFoundSubString.splice(0, this.arrayFoundSubString.length)
-      this.formFilter.reset();//очистка формы
-    }
   }
-
-
 }
