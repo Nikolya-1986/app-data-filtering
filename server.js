@@ -2,14 +2,12 @@ const path  = require('path');
 const express = require('express');
 const app = express();
 
-const srcPath = path.join(__dirname, '..', 'build')
-
 const port = process.env.PORT || 3000;
 
-app.use(express.static(srcPath));
+app.use(express.static(__dirname + '/dist/data-filtering'));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(srcPath, 'index.html'))
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/dist/data-filtering/index.html'))
 });
 
 app.listen(port, () => {
