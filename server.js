@@ -4,11 +4,11 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + '/dist/data-filtering'));
+app.use(express.static('./dist/data-filtering'));
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/data-filtering/index.html'))
-});
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/data-filtering/'}),
+);
 
 app.listen(port, () => {
     console.log("SERVER WORKS!!!")
